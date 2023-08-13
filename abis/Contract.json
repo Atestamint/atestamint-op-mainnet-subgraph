@@ -1,0 +1,309 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "contract IZoraFactory",
+        "name": "zoraNftFactory",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "creator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "dropAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "vaultAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "editionSize",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "metadataURIBase",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "metadataContractURI",
+        "type": "string"
+      }
+    ],
+    "name": "DropCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "creator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "editionAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "vaultAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "editionSize",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "imageURI",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "metadataContractURI",
+        "type": "string"
+      }
+    ],
+    "name": "EditionCreated",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "SETUP_VAULT_METHOD_ID",
+    "outputs": [{ "internalType": "bytes4", "name": "", "type": "bytes4" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "admin",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "name", "type": "string" },
+          { "internalType": "string", "name": "symbol", "type": "string" },
+          { "internalType": "uint64", "name": "editionSize", "type": "uint64" },
+          { "internalType": "uint16", "name": "royaltyBPS", "type": "uint16" },
+          {
+            "components": [
+              {
+                "internalType": "uint104",
+                "name": "publicSalePrice",
+                "type": "uint104"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maxSalePurchasePerAddress",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "publicSaleStart",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "publicSaleEnd",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "presaleStart",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "presaleEnd",
+                "type": "uint64"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "presaleMerkleRoot",
+                "type": "bytes32"
+              }
+            ],
+            "internalType": "struct IERC721Drop.SalesConfiguration",
+            "name": "saleConfig",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string",
+            "name": "metadataURIBase",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "metadataContractURI",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct AtestamintV2.CreateDropInputParams",
+        "name": "inputParams",
+        "type": "tuple"
+      }
+    ],
+    "name": "createDropCollection",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "name", "type": "string" },
+          { "internalType": "string", "name": "symbol", "type": "string" },
+          { "internalType": "uint64", "name": "editionSize", "type": "uint64" },
+          { "internalType": "uint16", "name": "royaltyBPS", "type": "uint16" },
+          {
+            "components": [
+              {
+                "internalType": "uint104",
+                "name": "publicSalePrice",
+                "type": "uint104"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maxSalePurchasePerAddress",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "publicSaleStart",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "publicSaleEnd",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "presaleStart",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "presaleEnd",
+                "type": "uint64"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "presaleMerkleRoot",
+                "type": "bytes32"
+              }
+            ],
+            "internalType": "struct IERC721Drop.SalesConfiguration",
+            "name": "saleConfig",
+            "type": "tuple"
+          },
+          { "internalType": "string", "name": "description", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "animationURI",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "imageURI", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "metadataContractURI",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct AtestamintV2.CreateEditionInputParams",
+        "name": "inputParams",
+        "type": "tuple"
+      }
+    ],
+    "name": "createEditionCollection",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "i_zoraNftFactory",
+    "outputs": [
+      { "internalType": "contract IZoraFactory", "name": "", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "nonce",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "schemaId",
+    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "_schemaId", "type": "bytes32" }
+    ],
+    "name": "updateSchemaId",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_vaultImplementation",
+        "type": "address"
+      }
+    ],
+    "name": "updateVaultImplementation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "vaultImplementation",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
