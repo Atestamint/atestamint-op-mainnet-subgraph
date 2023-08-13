@@ -1,8 +1,14 @@
 {
   "optimism": {
-    "Contract": {
+    "AtestamintV2": {
       "address": "0x23a76896B1B49CF4af4ad5e45c4E98BFbA7F0ddc",
       "startBlock": 108161974
+    },
+    "Vault": {
+      "address": "0x609BC1aAbBB373A6DFaE8CAeBD964404e88EF3ba"
+    },
+    "ERC721Drop": {
+      "address": "0x3E8524770adD176bE381a0529E09f1c6c3502A5a"
     }
   }
 }

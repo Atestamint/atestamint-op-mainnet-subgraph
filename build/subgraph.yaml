@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: AtestamintV2
@@ -19,13 +19,13 @@ dataSources:
         - Vault
       abis:
         - name: AtestamintV2
-          file: ./abis/AtestamintV2.json
+          file: AtestamintV2\abis\AtestamintV2.json
       eventHandlers:
         - event: DropCreated(address,address,address,uint64,string,string)
           handler: handleDropCreated
         - event: EditionCreated(address,address,address,uint64,string,string)
           handler: handleEditionCreated
-      file: ./src/atestamintv2.ts
+      file: AtestamintV2\AtestamintV2.wasm
 templates:
   - kind: ethereum
     name: Vault
@@ -40,13 +40,13 @@ templates:
         - Vault
       abis:
         - name: Vault
-          file: ./abis/Vault.json
+          file: Vault\abis\Vault.json
       eventHandlers:
         - event: FundsUnlocked(uint256,uint256,uint64)
           handler: handleFundsUnlocked
         - event: Voted(address,uint256,string,uint256,bool)
           handler: handleVoted
-      file: ./src/vault.ts
+      file: templates\Vault\Vault.wasm
   - kind: ethereum
     name: ERC721Drop
     network: optimism
@@ -63,10 +63,10 @@ templates:
         - EditionNFT
       abis:
         - name: ERC721Drop
-          file: ./abis/ERC721Drop.json
+          file: ERC721Drop\abis\ERC721Drop.json
       eventHandlers:
         - event: Sale(indexed address,indexed uint256,indexed uint256,uint256)
           handler: handleSale
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/erc-721-drop.ts
+      file: templates\ERC721Drop\ERC721Drop.wasm
